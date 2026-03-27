@@ -3,6 +3,7 @@ import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Link } from 'react-router';
 
 // TerminalCard 
 const TerminalCard = ({ title, code, language, children, delay }) => (
@@ -136,9 +137,12 @@ export default function Home() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 3.5, duration: 0.8 }} className="z-10 flex flex-col items-center">
           <p className="max-w-2xl text-gray-400 text-lg md:text-xl mb-10">From AI-powered automation to cloud infrastructure, we deliver technology solutions that drive results.</p>
           <div className="flex gap-4">
+            <Link to ="/Projects">
             <button className="bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-200 flex items-center gap-2 group transition-all">
               View Our Work <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
+            </Link>
+           
             <button className="border border-white/20 text-white px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition-all">Get In Touch</button>
           </div>
         </motion.div>
